@@ -26,9 +26,10 @@ class ProjectGalleryViewController: UICollectionViewController {
 
   /// The project list.  Often this would be serialized from a database or file on disk.
   private let projects = [
-    ProjectInfo(projectName: "One Asset", torchkitProj: "bigasset", projectDesc: "This is an example of using one asset and Torch's animation system to create an interesting project."),
-    ProjectInfo(projectName: "Responsive AR", torchkitProj: "responsive-ar", projectDesc: "This is a template available in the Torch app showcasing content that is responsive to where the user has placed it."),
-    ProjectInfo(projectName: "Desk Buddy", torchkitProj: "deskbuddy", projectDesc: "Desk Buddy shows off runtime object manipulation by displaying a cute animal to place on your desk.")
+    ProjectInfo(projectName: "No Plane Detect", torchkitProj: "noplanedetect", projectDesc: "This is an example project that skips plane detection."),
+    // ProjectInfo(projectName: "One Asset", torchkitProj: "bigasset", projectDesc: "This is an example of using one asset and Torch's animation system to create an interesting project."),
+    // ProjectInfo(projectName: "Responsive AR", torchkitProj: "responsive-ar", projectDesc: "This is a template available in the Torch app showcasing content that is responsive to where the user has placed it."),
+    // ProjectInfo(projectName: "Desk Buddy", torchkitProj: "deskbuddy", projectDesc: "Desk Buddy shows off runtime object manipulation by displaying a cute animal to place on your desk.")
   ]
 
   private let reuseIdentifier = "ProjectCell"

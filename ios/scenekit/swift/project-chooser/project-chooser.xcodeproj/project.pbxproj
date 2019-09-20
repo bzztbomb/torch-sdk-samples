@@ -19,6 +19,7 @@
 		F12EBCAF230C7BF5007F1884 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F12EBC9C230C7BF5007F1884 /* Roboto-Regular.ttf */; };
 		F12EBCB3230C7BF5007F1884 /* Apache License.txt in Resources */ = {isa = PBXBuildFile; fileRef = F12EBCA0230C7BF5007F1884 /* Apache License.txt */; };
 		F12EBCBB230C7BF5007F1884 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F12EBCA8230C7BF5007F1884 /* Roboto-Bold.ttf */; };
+		F1B739EC2335489B00556639 /* noplanedetect.torchkitproj in Resources */ = {isa = PBXBuildFile; fileRef = F1B739EB2335489B00556639 /* noplanedetect.torchkitproj */; };
 		F1CB65C722FB58C200B8CFE3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1CB65C622FB58C200B8CFE3 /* AppDelegate.swift */; };
 		F1CB65CC22FB58C200B8CFE3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1CB65CA22FB58C200B8CFE3 /* Main.storyboard */; };
 		F1CB65CE22FB58C200B8CFE3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1CB65CD22FB58C200B8CFE3 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 		F12EBC9C230C7BF5007F1884 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		F12EBCA0230C7BF5007F1884 /* Apache License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Apache License.txt"; sourceTree = "<group>"; };
 		F12EBCA8230C7BF5007F1884 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		F1B739EB2335489B00556639 /* noplanedetect.torchkitproj */ = {isa = PBXFileReference; lastKnownFileType = file; path = noplanedetect.torchkitproj; sourceTree = "<group>"; };
 		F1CB65C322FB58C100B8CFE3 /* project-chooser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "project-chooser.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1CB65C622FB58C200B8CFE3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1CB65CB22FB58C200B8CFE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 		F158D90822FB8A8800C31764 /* torchkitproj */ = {
 			isa = PBXGroup;
 			children = (
+				F1B739EB2335489B00556639 /* noplanedetect.torchkitproj */,
 				038A6E87230E009A008ABB55 /* responsive-ar.torchkitproj */,
 				F11D8F4222FC815900345599 /* bigasset.torchkitproj */,
 				F11D8F4422FC815900345599 /* deskbuddy.torchkitproj */,
@@ -211,6 +214,7 @@
 				F11D8F4622FC815900345599 /* bigasset.torchkitproj in Resources */,
 				F11D8F4822FC815900345599 /* deskbuddy.torchkitproj in Resources */,
 				F1CB65CC22FB58C200B8CFE3 /* Main.storyboard in Resources */,
+				F1B739EC2335489B00556639 /* noplanedetect.torchkitproj in Resources */,
 				F12EBCBB230C7BF5007F1884 /* Roboto-Bold.ttf in Resources */,
 				F12EBCAB230C7BF5007F1884 /* Roboto-Medium.ttf in Resources */,
 				F12EBCAF230C7BF5007F1884 /* Roboto-Regular.ttf in Resources */,

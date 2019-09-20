@@ -7,6 +7,7 @@ import Metal
 import SceneKit
 import TorchKit
 import UIKit
+import os
 
 /**
  `TorchProjectViewController` is meant to be a simple starting point for displaying Torch projects inside of an iOS application.
@@ -96,28 +97,25 @@ class TorchProjectViewController: UIViewController, ARSCNViewDelegate, ARSession
       fatalError(error.localizedDescription)
     }
 
-    // Set the project anchor
-    if self.projectAnchorManager == nil {
-      self.projectAnchorManager = ProjectAnchorManager(withSceneView: self.sceneView) { [weak self] in
-        guard let projectVC = self, let torchProj = projectVC.torchProject else { return }
-        // Add the gesture recognizers needed for object selection and manipulation
-        TorchGestureManager.shared.addGestureRecognizers(to: projectVC.sceneView)
-        // Setup scene lighting
-        projectVC.setupSceneLighting()
-        // Add the TorchProjectNode to the SceneKit scene
-        projectVC.sceneView.scene.rootNode.addChildNode(torchProj)
-        // Remove our reference ot the world anchor manager
-        projectVC.projectAnchorManager = nil
-        // Update UI state.
-        guard let frame = projectVC.sceneView.session.currentFrame else { return }
-        projectVC.updateSessionInfoLabel(for: frame,
-                                         trackingState: frame.camera.trackingState)
-
-        // Set a delegate to tick the torch project. Do this here because ProjectAnchorManager
-        // uses the delegate to get plane updates.
-        projectVC.sceneView.delegate = self
+    self.torchProject?.triggerFired = { trigger in
+      if (trigger.id == "8712e2ab-e1b2-4fd4-809b-5f6adff4f109") {
+        self.sessionInfoLabel?.text = ""; // The image has been detected, clear text
       }
     }
+
+    guard let torchProj = self.torchProject else { return }
+    // Add the gesture recognizers needed for object selection and manipulation
+    TorchGestureManager.shared.addGestureRecognizers(to: self.sceneView)
+    self.sceneView.session.delegate = torchProj.arSessionDelegate ?? nil
+    // Setup scene lighting
+    self.setupSceneLighting()
+    // Add the TorchProjectNode to the SceneKit scene
+    self.sceneView.scene.rootNode.addChildNode(torchProj)
+    // Remove our reference ot the world anchor manager
+    self.projectAnchorManager = nil
+    // Set a delegate to tick the torch project. Do this here because ProjectAnchorManager
+    // uses the delegate to get plane updates.
+    self.sceneView.delegate = self
   }
 
   override func viewWillDisappear(_ animated: Bool) {
@@ -262,7 +260,7 @@ class TorchProjectViewController: UIViewController, ARSCNViewDelegate, ARSession
     switch trackingState {
     case .normal where frame.anchors.isEmpty:
       // No planes detected; provide instructions for this app's AR interactions.
-      message = "Move the device around to detect horizontal and vertical surfaces."
+      message = "Find target image, and move the device around to detect horizontal and vertical surfaces."
 
     case .notAvailable:
       message = "Tracking unavailable."
